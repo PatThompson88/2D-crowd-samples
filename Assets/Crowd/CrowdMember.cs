@@ -2,12 +2,14 @@ using UnityEngine;
 
 public class CrowdMember : MonoBehaviour
 {
-    CrowdBehavior.CrowdState fanState;
+    CrowdState fanState;
+    public SO_CrowdSettings crowdSettings;
     public Transform fanTransform;
     public GameObject imgNormal;
     public GameObject imgCelebrate;
     public GameObject imgSad;
     float movementSpeed = 2f;
+    float maxHeight = 0.14f;
     void Awake()
     {
         CrowdBehavior.onNewState += HandleNewCrowdState;
@@ -18,23 +20,26 @@ public class CrowdMember : MonoBehaviour
         imgNormal.SetActive(false);
         imgSad.SetActive(false);
     }
-    void HandleNewCrowdState(CrowdBehavior.CrowdState newState)
+    void HandleNewCrowdState(CrowdState newState)
     {
         fanState = newState;
         DisableAllSprites();
         switch (newState)
         {
-            case CrowdBehavior.CrowdState.Normal:
-                movementSpeed = Random.Range(1.9f, 2.4f);
+            case CrowdState.Normal:
+                movementSpeed = Random.Range(2.2f, 2.6f);
                 imgNormal.SetActive(true);
+                maxHeight = 0.1f;
                 break;
-            case CrowdBehavior.CrowdState.Celebrate:
-                movementSpeed = Random.Range(0.8f, 1.15f);
+            case CrowdState.Celebrate:
+                movementSpeed = Random.Range(0.3f, 0.9f);
                 imgCelebrate.SetActive(true);
+                maxHeight = 0.16f;
                 break;
-            case CrowdBehavior.CrowdState.Sad:
-                movementSpeed = Random.Range(3.2f, 3.9f);
+            case CrowdState.Sad:
+                movementSpeed = Random.Range(4.8f, 5.8f);
                 imgSad.SetActive(true);
+                maxHeight = 0.075f;
                 break;
         }
         Debug.Log($"now in state {fanState}  |  movement {movementSpeed}");
@@ -42,7 +47,7 @@ public class CrowdMember : MonoBehaviour
 
     // move up and down during fixed update cycle
     bool rising;
-    float maxHeight = 0.14f;
+    
     void FixedUpdate()
     {
         // min max height
