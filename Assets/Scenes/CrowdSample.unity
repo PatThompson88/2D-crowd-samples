@@ -615,41 +615,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Crowd
       objectReference: {fileID: 0}
-    - target: {fileID: 1488943167618898164, guid: 642c583a07918774daf42f18283a9934,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1488943167618898164, guid: 642c583a07918774daf42f18283a9934,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1488943167618898164, guid: 642c583a07918774daf42f18283a9934,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 3498003012107085194}
-    - target: {fileID: 1488943167618898164, guid: 642c583a07918774daf42f18283a9934,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1488943167618898164, guid: 642c583a07918774daf42f18283a9934,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CrowdNormal
-      objectReference: {fileID: 0}
-    - target: {fileID: 1488943167618898164, guid: 642c583a07918774daf42f18283a9934,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CrowdBehavior, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 1488943167618898164, guid: 642c583a07918774daf42f18283a9934,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6618152213492978965, guid: 642c583a07918774daf42f18283a9934,
         type: 3}
       propertyPath: m_Camera
@@ -660,18 +625,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 642c583a07918774daf42f18283a9934, type: 3}
---- !u!114 &3498003012107085194 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3051155295272177880, guid: 642c583a07918774daf42f18283a9934,
-    type: 3}
-  m_PrefabInstance: {fileID: 3498003012107085192}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4acaa5816e295864999b592f11b7988b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

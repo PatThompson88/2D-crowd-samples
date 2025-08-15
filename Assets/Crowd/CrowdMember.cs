@@ -4,25 +4,37 @@ public class CrowdMember : MonoBehaviour
 {
     CrowdBehavior.CrowdState fanState;
     public Transform fanTransform;
+    public GameObject imgNormal;
+    public GameObject imgCelebrate;
+    public GameObject imgSad;
     float movementSpeed = 2f;
     void Awake()
     {
         CrowdBehavior.onNewState += HandleNewCrowdState;
     }
-
+    void DisableAllSprites()
+    {
+        imgCelebrate.SetActive(false);
+        imgNormal.SetActive(false);
+        imgSad.SetActive(false);
+    }
     void HandleNewCrowdState(CrowdBehavior.CrowdState newState)
     {
         fanState = newState;
+        DisableAllSprites();
         switch (newState)
         {
             case CrowdBehavior.CrowdState.Normal:
-                movementSpeed = Random.Range(1.5f, 2.3f);
+                movementSpeed = Random.Range(1.9f, 2.4f);
+                imgNormal.SetActive(true);
                 break;
             case CrowdBehavior.CrowdState.Celebrate:
-                movementSpeed = Random.Range(1, 1.35f);
+                movementSpeed = Random.Range(0.8f, 1.15f);
+                imgCelebrate.SetActive(true);
                 break;
             case CrowdBehavior.CrowdState.Sad:
-                movementSpeed = Random.Range(2.6f, 3.2f);
+                movementSpeed = Random.Range(3.2f, 3.9f);
+                imgSad.SetActive(true);
                 break;
         }
         Debug.Log($"now in state {fanState}  |  movement {movementSpeed}");
