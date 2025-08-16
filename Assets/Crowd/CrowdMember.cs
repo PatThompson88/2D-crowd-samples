@@ -14,6 +14,10 @@ public class CrowdMember : MonoBehaviour
     {
         CrowdBehavior.onNewState += HandleNewCrowdState;
     }
+    void Start()
+    {
+        fanTransform.position += Vector3.up * Random.Range(0, 0.03f);
+    }
     void DisableAllSprites()
     {
         imgCelebrate.SetActive(false);

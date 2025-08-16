@@ -17,5 +17,5 @@ MonoBehaviour:
   maxHeightCelebrate: 0.06
   maxHeightSad: 0.0122
   speedNormal: 5.28
-  speedCelebrate: 1.84
+  speedCelebrate: 1.25
   speedSad: 8.27
