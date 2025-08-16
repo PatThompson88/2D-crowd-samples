@@ -8,7 +8,7 @@ public class CrowdMember : MonoBehaviour
     public GameObject imgNormal;
     public GameObject imgCelebrate;
     public GameObject imgSad;
-    float movementSpeed = 2f;
+    float speedReductionFactor = 2f;
     float maxHeight = 0.14f;
     void Awake()
     {
@@ -27,27 +27,26 @@ public class CrowdMember : MonoBehaviour
         switch (newState)
         {
             case CrowdState.Normal:
-                movementSpeed = Random.Range(2.2f, 2.6f);
+                speedReductionFactor = crowdSettings.speedNormal + Random.Range(-0.4f, 0.4f);
+                maxHeight = crowdSettings.maxHeightNormal + Random.Range(-0.005f, 0.005f); 
                 imgNormal.SetActive(true);
-                maxHeight = 0.1f;
                 break;
             case CrowdState.Celebrate:
-                movementSpeed = Random.Range(0.3f, 0.9f);
+                speedReductionFactor = crowdSettings.speedCelebrate + Random.Range(-0.15f, 0.15f);
+                maxHeight = crowdSettings.maxHeightCelebrate + Random.Range(-0.005f, 0.005f);
                 imgCelebrate.SetActive(true);
-                maxHeight = 0.16f;
                 break;
             case CrowdState.Sad:
-                movementSpeed = Random.Range(4.8f, 5.8f);
+                speedReductionFactor = crowdSettings.speedSad + Random.Range(-0.3f, 0.3f);
+                maxHeight = crowdSettings.maxHeightCelebrate + Random.Range(-0.005f, 0.005f);
                 imgSad.SetActive(true);
-                maxHeight = 0.075f;
                 break;
         }
-        Debug.Log($"now in state {fanState}  |  movement {movementSpeed}");
+        Debug.Log($"now in state {fanState}  |  spd reduction {speedReductionFactor}");
     }
 
     // move up and down during fixed update cycle
-    bool rising;
-    
+    bool rising = true;
     void FixedUpdate()
     {
         // min max height
@@ -55,7 +54,7 @@ public class CrowdMember : MonoBehaviour
         {
             if (fanTransform.position.y < maxHeight)
             {
-                fanTransform.position += Vector3.up * Time.fixedDeltaTime / movementSpeed;
+                fanTransform.position += Vector3.up * Time.fixedDeltaTime / speedReductionFactor;
             }
             else
             {
@@ -66,7 +65,7 @@ public class CrowdMember : MonoBehaviour
         {
             if (fanTransform.position.y > 0)
             {
-                fanTransform.position += -Vector3.up * Time.fixedDeltaTime / movementSpeed;
+                fanTransform.position += -Vector3.up * Time.fixedDeltaTime / speedReductionFactor;
             }
             else
             {

@@ -6,11 +6,10 @@ using UnityEngine;
 public class SO_CrowdSettings : ScriptableObject
 {
     public CrowdState crowdState;
-    [Range(0.01f, 0.5f)] public float maxHeightNormal;
-    [Range(0.01f, 0.5f)] public float maxHeightCelebrate;
-    [Range(0.01f, 0.5f)] public float maxHeightSad;
-    [Range(1.5f, 3.3f)] public float speedNormal;
-    [Range(0.01f, 0.5f)] public float speedCelebrate;
-    [Range(0.01f, 0.5f)] public float speedSad;
-    
+    [Range(0.02f, 0.05f)] public float maxHeightNormal;
+    [Range(0.04f, 0.1f)] public float maxHeightCelebrate;
+    [Range(0.01f, 0.03f)] public float maxHeightSad;
+    [Range(4f, 6f)] public float speedNormal;
+    [Range(1f, 3f)] public float speedCelebrate;
+    [Range(6f, 10f)] public float speedSad;
 }

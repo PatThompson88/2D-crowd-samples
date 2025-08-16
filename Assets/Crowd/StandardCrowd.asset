@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: StandardCrowd
   m_EditorClassIdentifier: 
   crowdState: 0
-  maxHeightNormal: 0.115
-  maxHeightCelebrate: 0.444
-  maxHeightSad: 0.041
+  maxHeightNormal: 0.0352
+  maxHeightCelebrate: 0.06
+  maxHeightSad: 0.0122
+  speedNormal: 5.28
+  speedCelebrate: 1.84
+  speedSad: 8.27
