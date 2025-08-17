@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 096df236515acf14f90f0a794a86e5e0, type: 3}
   m_Name: StandardCrowd
   m_EditorClassIdentifier: 
-  crowdState: 0
-  maxHeightNormal: 0.0352
-  maxHeightCelebrate: 0.06
-  maxHeightSad: 0.0122
-  speedNormal: 5.28
-  speedCelebrate: 1.25
-  speedSad: 8.27
+  crowdState: 1
+  maxHeightNormal: 0.0388
+  maxHeightCelebrate: 0.0763
+  maxHeightSad: 0.0198
+  speedNormal: 6
+  speedCelebrate: 1
+  speedSad: 7.9
